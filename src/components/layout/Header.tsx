@@ -8,6 +8,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { ThemeToggle } from '../common/ThemeToggle';
+import { QuranLogo } from '../common/QuranLogo';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
@@ -50,10 +51,8 @@ export function Header() {
         >
           <div className='relative'>
             {/* Glow behind logo */}
-            <div className='absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-500' />
-            <div className='relative bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-600 dark:from-emerald-500 dark:via-teal-500 dark:to-emerald-400 p-2 rounded-xl shadow-lg shadow-emerald-600/20'>
-              <Book className='w-5 h-5 text-white drop-shadow-sm' />
-            </div>
+            <div className='absolute -inset-2 bg-emerald-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+            <QuranLogo className='w-10 h-10 drop-shadow-md transition-transform duration-300 group-hover:scale-110' />
           </div>
           <div className='flex flex-col'>
             <span className='arabic-text !text-xl !leading-tight font-bold text-gradient-emerald'>
@@ -67,7 +66,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className='hidden md:flex items-center'>
-          <div className='flex items-center gap-1 bg-muted/30 dark:bg-muted/20 backdrop-blur-sm rounded-2xl p-1 border border-border/30'>
+          <div className='flex items-center gap-1 bg-muted/30 dark:bg-muted/20 backdrop-blur-sm rounded-2xl p-1'>
             {navLinks.map((link) => (
               <Link
                 key={link.to}

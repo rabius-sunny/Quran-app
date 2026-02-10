@@ -65,8 +65,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         >
           {/* Subtle background decorations */}
           <div className='fixed inset-0 pointer-events-none z-0'>
-            <div className='absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/20 dark:bg-emerald-400/20 rounded-full blur-3xl' />
-            <div className='absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-500/20 dark:bg-teal-400/20 rounded-full blur-3xl' />
+            <div className='absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/15 dark:bg-emerald-400/10 rounded-full blur-3xl' />
+            <div className='absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-500/15 dark:bg-teal-400/10 rounded-full blur-3xl' />
           </div>
           <Header />
           <main className='flex-1 px-4 py-6 md:px-6 md:py-8 relative z-10'>

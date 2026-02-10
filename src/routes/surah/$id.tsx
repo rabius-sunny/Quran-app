@@ -16,13 +16,15 @@ import {
 } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
+import { Slider } from '@/components/ui/slider';
 import {
   ArrowLeft,
   MapPin,
   BookOpen,
   Languages,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Type
 } from 'lucide-react';
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { cn } from '@/lib/utils';
@@ -42,6 +44,7 @@ function SurahDetailPage() {
   const [translationLanguage, setTranslationLanguage] = useState<
     'english' | 'bengali' | 'urdu'
   >('english');
+  const [arabicFontSize, setArabicFontSize] = useState([32]);
 
   // Tafsir modal state
   const [tafsirVerse, setTafsirVerse] = useState<{ ayahNo: number } | null>(
@@ -184,7 +187,7 @@ function SurahDetailPage() {
   }
 
   return (
-    <div className='space-y-8 animate-fade-in'>
+    <div className='space-y-8 animate-fade-in container max-w-5xl mx-auto mt-8'>
       {/* Back Button */}
       <Button
         asChild
@@ -269,7 +272,7 @@ function SurahDetailPage() {
       {surahNumber !== 9 && surahNumber !== 1 && (
         <div
           className='text-center py-6 animate-fade-in-up'
-          style={{ animationDelay: '0.1s' }}
+          style={{ animationDelay: '0s' }}
         >
           <p className='arabic-text text-3xl md:text-4xl text-foreground/70'>
             بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ
@@ -280,8 +283,8 @@ function SurahDetailPage() {
 
       {/* Translation Controls */}
       <Card
-        className='glass-card animate-fade-in-up sticky top-20 z-30'
-        style={{ animationDelay: '0.15s' }}
+        className='glass-card animate-fade-in-up z-30'
+        style={{ animationDelay: '0s' }}
       >
         <CardContent className='p-5'>
           <div className='flex flex-col sm:flex-row items-start sm:items-center gap-5'>
@@ -324,6 +327,20 @@ function SurahDetailPage() {
                 </div>
               </>
             )}
+
+            {/* Font Size Slider */}
+            <div className='hidden sm:block w-px h-6 bg-gradient-to-b from-transparent via-border to-transparent' />
+            <div className='flex items-center gap-3'>
+              <Type className='w-4 h-4 text-emerald-600 dark:text-emerald-400' />
+              <Slider
+                value={arabicFontSize}
+                onValueChange={setArabicFontSize}
+                min={24}
+                max={60}
+                step={2}
+                className='w-24 sm:w-32 bg-emerald-500 rounded-xl'
+              />
+            </div>
           </div>
         </CardContent>
       </Card>
@@ -345,6 +362,7 @@ function SurahDetailPage() {
               totalAyahs={surah.totalAyah}
               showTranslation={showTranslation}
               translationLanguage={translationLanguage}
+              arabicFontSize={arabicFontSize[0]}
               onShowTafsir={() => setTafsirVerse({ ayahNo: verse.ayahNo })}
               onShare={() => handleShare(verse.ayahNo)}
             />

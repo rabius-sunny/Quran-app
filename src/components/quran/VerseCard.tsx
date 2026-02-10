@@ -21,6 +21,7 @@ interface VerseCardProps {
   totalAyahs?: number;
   showTranslation?: boolean;
   translationLanguage?: 'english' | 'bengali' | 'urdu';
+  arabicFontSize?: number;
   onShowTafsir?: () => void;
   onShare?: () => void;
   className?: string;
@@ -33,6 +34,7 @@ export function VerseCard({
   totalAyahs,
   showTranslation = true,
   translationLanguage = 'english',
+  arabicFontSize,
   onShowTafsir,
   onShare,
   className
@@ -205,9 +207,19 @@ export function VerseCard({
 
           <p
             className={cn(
-              'arabic-text text-3xl md:text-4xl leading-[3rem] md:leading-[3.5rem] text-foreground/90',
+              'arabic-text text-foreground/90 transition-all duration-300',
+              !arabicFontSize &&
+                'text-3xl md:text-4xl leading-[3rem] md:leading-[3.5rem]',
               isCurrentVersePlaying && 'text-foreground'
             )}
+            style={
+              arabicFontSize
+                ? {
+                    fontSize: `${arabicFontSize}px`,
+                    lineHeight: `${arabicFontSize * 1.7}px`
+                  }
+                : undefined
+            }
           >
             {verse.arabic}
           </p>
