@@ -1,3 +1,7 @@
+/* Import Islamic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
 @import 'tailwindcss';
 
 @import 'tw-animate-css';
@@ -7,8 +11,19 @@
 body {
   @apply m-0;
   font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    'Bricolage Grotesque',
+    'Plus Jakarta Sans',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,75 +33,133 @@ code {
     source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* Arabic text styling */
+.arabic-text {
+  font-family: 'Amiri Quran', 'Amiri', serif;
+  font-size: 1.75rem;
+  line-height: 2.8rem;
+  text-align: right;
+  direction: rtl;
+}
+
+/* Bangla text styling */
+.bangla-text {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+}
+
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.871 0.006 286.286);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.871 0.006 286.286);
+  /* Islamic-themed color palette - Light Mode */
+  --background: 252 251 245;
+  --foreground: 28 25 23;
+
+  --card: 255 255 252;
+  --card-foreground: 28 25 23;
+
+  --popover: 255 255 252;
+  --popover-foreground: 28 25 23;
+
+  /* Deep emerald primary */
+  --primary: 5 150 105;
+  --primary-foreground: 255 255 255;
+
+  /* Rich gold accent */
+  --secondary: 196 155 40;
+  --secondary-foreground: 255 255 255;
+
+  /* Warm muted cream */
+  --muted: 245 240 230;
+  --muted-foreground: 115 110 100;
+
+  /* Teal accent */
+  --accent: 13 148 136;
+  --accent-foreground: 255 255 255;
+
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+
+  --border: 235 230 218;
+  --input: 235 230 218;
+  --ring: 5 150 105;
+
+  --chart-1: 5 150 105;
+  --chart-2: 13 148 136;
+  --chart-3: 196 155 40;
+  --chart-4: 251 191 36;
+  --chart-5: 16 185 129;
+
+  --radius: 0.75rem;
+
+  /* Islamic gold gradient */
+  --gold: 196 155 40;
+  --gold-light: 228 200 100;
+  --gold-dark: 160 120 10;
+
+  /* Emerald gradient */
+  --emerald: 5 150 105;
+  --emerald-light: 16 185 129;
+  --emerald-dark: 4 120 87;
+
+  /* Deep teal */
+  --teal: 13 148 136;
+  --teal-light: 20 184 166;
+  --teal-dark: 15 118 110;
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.141 0.005 285.823);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.141 0.005 285.823);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.274 0.006 286.033);
-  --input: oklch(0.274 0.006 286.033);
-  --ring: oklch(0.442 0.017 285.786);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.274 0.006 286.033);
-  --sidebar-ring: oklch(0.442 0.017 285.786);
+  /* Islamic-themed color palette - Dark Mode */
+  --background: 8 10 28;
+  --foreground: 245 243 238;
+
+  --card: 14 18 42;
+  --card-foreground: 245 243 238;
+
+  --popover: 14 18 42;
+  --popover-foreground: 245 243 238;
+
+  /* Brighter emerald for dark mode */
+  --primary: 16 185 129;
+  --primary-foreground: 8 10 28;
+
+  /* Luminous gold for dark mode */
+  --secondary: 228 200 100;
+  --secondary-foreground: 8 10 28;
+
+  /* Muted dark slate */
+  --muted: 22 30 52;
+  --muted-foreground: 148 163 184;
+
+  /* Lighter teal */
+  --accent: 20 184 166;
+  --accent-foreground: 8 10 28;
+
+  --destructive: 248 113 113;
+  --destructive-foreground: 8 10 28;
+
+  --border: 25 35 60;
+  --input: 25 35 60;
+  --ring: 16 185 129;
+
+  --chart-1: 16 185 129;
+  --chart-2: 20 184 166;
+  --chart-3: 228 200 100;
+  --chart-4: 253 224 71;
+  --chart-5: 52 211 153;
+
+  /* Islamic gold gradient for dark mode */
+  --gold: 228 200 100;
+  --gold-light: 253 224 71;
+  --gold-dark: 196 155 40;
+
+  /* Emerald gradient for dark mode */
+  --emerald: 16 185 129;
+  --emerald-light: 52 211 153;
+  --emerald-dark: 5 150 105;
+
+  --teal: 20 184 166;
+  --teal-light: 94 234 212;
+  --teal-dark: 13 148 136;
 }
 
 @theme inline {
@@ -118,14 +191,164 @@ code {
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Islamic theme colors */
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-emerald: var(--emerald);
+  --color-emerald-light: var(--emerald-light);
+  --color-emerald-dark: var(--emerald-dark);
+  --color-teal: var(--teal);
+  --color-teal-light: var(--teal-light);
+  --color-teal-dark: var(--teal-dark);
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: floatSlow 8s ease-in-out infinite;
+  --animate-fade-in-up: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in-down: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fadeIn 0.5s ease forwards;
+  --animate-scale-in: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-spin-slow: spinSlow 20s linear infinite;
+  --animate-breathe: breathe 4s ease-in-out infinite;
+  --animate-slide-in-right: slideInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+  --animate-glow-border: glowBorder 3s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes floatSlow {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-8px) rotate(1deg);
+    }
+    66% {
+      transform: translateY(4px) rotate(-1deg);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  @keyframes spinSlow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes breathe {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes glowBorder {
+    0%,
+    100% {
+      box-shadow:
+        0 0 8px rgb(var(--emerald) / 0.2),
+        inset 0 0 8px rgb(var(--emerald) / 0.05);
+    }
+    50% {
+      box-shadow:
+        0 0 20px rgb(var(--emerald) / 0.35),
+        inset 0 0 12px rgb(var(--emerald) / 0.08);
+    }
+  }
 }
 
 @layer base {
@@ -134,5 +357,477 @@ code {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ============================================================
+   HERO SECTION — visible immediately, no blank flash
+   ============================================================ */
+.hero-section {
+  /* Content is always visible; entrance animation is purely cosmetic */
+  opacity: 1 !important;
+}
+
+.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: heroEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* Stagger children automatically */
+.hero-visible:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hero-visible:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.hero-visible:nth-child(3) {
+  animation-delay: 0.18s;
+}
+.hero-visible:nth-child(4) {
+  animation-delay: 0.24s;
+}
+.hero-visible:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.hero-visible:nth-child(6) {
+  animation-delay: 0.36s;
+}
+.hero-visible:nth-child(7) {
+  animation-delay: 0.42s;
+}
+.hero-visible:nth-child(8) {
+  animation-delay: 0.48s;
+}
+.hero-visible:nth-child(9) {
+  animation-delay: 0.54s;
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+/* ============================================================
+   ISLAMIC GRADIENT UTILITIES
+   ============================================================ */
+@layer utilities {
+  .gradient-emerald {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--emerald-light)),
+      rgb(var(--emerald)),
+      rgb(var(--emerald-dark))
+    );
+  }
+
+  .gradient-gold {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--gold-light)),
+      rgb(var(--gold)),
+      rgb(var(--gold-dark))
+    );
+  }
+
+  .gradient-islamic {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--emerald)),
+      rgb(var(--teal)),
+      rgb(var(--gold))
+    );
+  }
+
+  .gradient-emerald-radial {
+    background:
+      radial-gradient(
+        ellipse at 30% 20%,
+        rgb(var(--emerald-light) / 0.15),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at 70% 80%,
+        rgb(var(--teal-light) / 0.1),
+        transparent 60%
+      );
+  }
+
+  .gradient-gold-radial {
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      rgb(var(--gold-light) / 0.12),
+      transparent 50%
+    );
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(
+      to right,
+      rgb(var(--gold-light)),
+      rgb(var(--gold)),
+      rgb(var(--gold-dark))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-emerald {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--emerald-light)),
+      rgb(var(--emerald)),
+      rgb(var(--emerald-dark))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(var(--gold-light) / 0.07) 25%,
+      rgb(var(--emerald-light) / 0.07) 50%,
+      rgb(var(--gold-light) / 0.07) 75%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* ============================================================
+     ISLAMIC PATTERN OVERLAYS (SVG-based)
+     ============================================================ */
+
+  /* Cross pattern - subtle geometric */
+  .pattern-overlay {
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Geometric circles - Islamic geometric pattern */
+  .pattern-islamic-geo {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Arabesque lattice */
+  .pattern-arabesque {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23059669' stroke-opacity='0.06' stroke-width='1'%3E%3Ccircle cx='50' cy='50' r='40'/%3E%3Ccircle cx='50' cy='50' r='25'/%3E%3Cline x1='50' y1='0' x2='50' y2='100'/%3E%3Cline x1='0' y1='50' x2='100' y2='50'/%3E%3Cline x1='15' y1='15' x2='85' y2='85'/%3E%3Cline x1='85' y1='15' x2='15' y2='85'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ============================================================
+     GLASSMORPHISM CARD SYSTEM
+     ============================================================ */
+  .glass-card {
+    @apply relative overflow-hidden;
+    background: rgb(var(--card) / 0.65);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgb(var(--emerald) / 0.08);
+    box-shadow:
+      0 1px 2px rgb(0 0 0 / 0.04),
+      0 4px 16px rgb(var(--emerald) / 0.04),
+      inset 0 1px 0 rgb(255 255 255 / 0.06);
+  }
+
+  .dark .glass-card {
+    background: rgb(var(--card) / 0.5);
+    border-color: rgb(var(--emerald) / 0.1);
+    box-shadow:
+      0 1px 2px rgb(0 0 0 / 0.2),
+      0 4px 24px rgb(var(--emerald) / 0.06),
+      inset 0 1px 0 rgb(255 255 255 / 0.03);
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-500;
+  }
+  .glass-card-hover:hover {
+    background: rgb(var(--card) / 0.85);
+    border-color: rgb(var(--emerald) / 0.2);
+    box-shadow:
+      0 2px 4px rgb(0 0 0 / 0.06),
+      0 8px 32px rgb(var(--emerald) / 0.08),
+      inset 0 1px 0 rgb(255 255 255 / 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Premium card with inner glow */
+  .premium-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--card) / 0.8),
+      rgb(var(--card) / 0.6)
+    );
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid rgb(var(--emerald) / 0.1);
+    box-shadow:
+      0 2px 4px rgb(0 0 0 / 0.04),
+      0 8px 32px rgb(var(--emerald) / 0.06),
+      inset 0 1px 0 rgb(255 255 255 / 0.08),
+      inset 0 -1px 0 rgb(var(--emerald) / 0.05);
+  }
+
+  .dark .premium-card {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--card) / 0.6),
+      rgb(16 22 48 / 0.8)
+    );
+    border-color: rgb(var(--emerald) / 0.12);
+    box-shadow:
+      0 2px 4px rgb(0 0 0 / 0.3),
+      0 8px 40px rgb(var(--emerald) / 0.08),
+      inset 0 1px 0 rgb(255 255 255 / 0.04),
+      inset 0 -1px 0 rgb(var(--emerald) / 0.06);
+  }
+
+  /* Ornate card with gold border trim */
+  .ornate-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: rgb(var(--card) / 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgb(var(--gold) / 0.15);
+    box-shadow:
+      0 2px 8px rgb(var(--gold) / 0.06),
+      0 8px 32px rgb(var(--emerald) / 0.04),
+      inset 0 1px 0 rgb(var(--gold-light) / 0.1);
+  }
+
+  .dark .ornate-card {
+    background: rgb(var(--card) / 0.55);
+    border-color: rgb(var(--gold) / 0.12);
+    box-shadow:
+      0 2px 8px rgb(var(--gold) / 0.08),
+      0 8px 32px rgb(var(--emerald) / 0.06),
+      inset 0 1px 0 rgb(var(--gold-light) / 0.06);
+  }
+
+  /* ============================================================
+     ISLAMIC SHAPES (clip-paths)
+     ============================================================ */
+  .shape-arch {
+    clip-path: polygon(
+      0% 100%,
+      0% 25%,
+      10% 10%,
+      30% 2%,
+      50% 0%,
+      70% 2%,
+      90% 10%,
+      100% 25%,
+      100% 100%
+    );
+  }
+
+  .shape-mihrab {
+    clip-path: polygon(
+      0% 100%,
+      0% 30%,
+      5% 18%,
+      15% 8%,
+      30% 2%,
+      50% 0%,
+      70% 2%,
+      85% 8%,
+      95% 18%,
+      100% 30%,
+      100% 100%
+    );
+  }
+
+  .shape-star-8 {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+
+  .shape-diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .shape-hexagon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+
+  .shape-mosque-dome {
+    clip-path: ellipse(50% 60% at 50% 60%);
+  }
+
+  /* ============================================================
+     DECORATIVE ELEMENTS
+     ============================================================ */
+
+  /* Gold line separator */
+  .gold-separator {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--gold-light) / 0.3) 20%,
+      rgb(var(--gold) / 0.6) 50%,
+      rgb(var(--gold-light) / 0.3) 80%,
+      transparent
+    );
+  }
+
+  /* Emerald line separator */
+  .emerald-separator {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--emerald-light) / 0.3) 20%,
+      rgb(var(--emerald) / 0.5) 50%,
+      rgb(var(--emerald-light) / 0.3) 80%,
+      transparent
+    );
+  }
+
+  /* Ornate divider with diamond center */
+  .ornate-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .ornate-divider::before,
+  .ornate-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--gold) / 0.4),
+      transparent
+    );
+  }
+
+  /* Surah number ornament frame */
+  .surah-number-frame {
+    @apply relative flex items-center justify-center;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .surah-number-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--emerald-light) / 0.15),
+      rgb(var(--gold-light) / 0.15)
+    );
+    border: 1.5px solid rgb(var(--gold) / 0.3);
+    transform: rotate(45deg);
+    border-radius: 4px;
+  }
+
+  /* Verse number ornament (octagonal) */
+  .verse-number-ornament {
+    @apply relative flex items-center justify-center;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .verse-number-ornament::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--emerald) / 0.08),
+      rgb(var(--teal) / 0.08)
+    );
+    border: 1px solid rgb(var(--emerald) / 0.2);
+    clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 30%,
+      100% 70%,
+      70% 100%,
+      30% 100%,
+      0% 70%,
+      0% 30%
+    );
+  }
+
+  /* Inner glow overlay for cards */
+  .inner-glow-emerald::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at 30% 0%,
+      rgb(var(--emerald) / 0.06),
+      transparent 60%
+    );
+  }
+
+  .inner-glow-gold::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at 70% 0%,
+      rgb(var(--gold) / 0.06),
+      transparent 60%
+    );
+  }
+
+  /* Soft shadow system */
+  .shadow-islamic {
+    box-shadow:
+      0 1px 3px rgb(var(--emerald) / 0.04),
+      0 6px 24px rgb(var(--emerald) / 0.06);
+  }
+
+  .shadow-islamic-lg {
+    box-shadow:
+      0 2px 6px rgb(var(--emerald) / 0.06),
+      0 12px 48px rgb(var(--emerald) / 0.1);
+  }
+
+  .shadow-gold {
+    box-shadow:
+      0 1px 3px rgb(var(--gold) / 0.06),
+      0 6px 24px rgb(var(--gold) / 0.08);
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-islamic::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-islamic::-webkit-scrollbar-track {
+    background: rgb(var(--muted) / 0.3);
+    border-radius: 3px;
+  }
+  .scrollbar-islamic::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--emerald) / 0.3),
+      rgb(var(--teal) / 0.3)
+    );
+    border-radius: 3px;
   }
 }

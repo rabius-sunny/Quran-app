@@ -3,11 +3,12 @@ import { Store } from '@tanstack/store'
 import { loadFromLocalStorage, saveToLocalStorage, debounce } from '../utils/localStorage'
 
 export interface Bookmark {
+  verseKey: string // Format: "surahNo:ayahNo"
   surahNo: number
   ayahNo: number
   timestamp: number
   surahName?: string
-  verseText?: string
+  arabicText?: string
 }
 
 export interface BookmarksState {
@@ -38,9 +39,7 @@ bookmarksStore.subscribe(() => {
 export function addBookmark(bookmark: Omit<Bookmark, 'timestamp'>) {
   bookmarksStore.setState((state) => {
     // Check if bookmark already exists
-    const exists = state.bookmarks.some(
-      (b) => b.surahNo === bookmark.surahNo && b.ayahNo === bookmark.ayahNo
-    )
+    const exists = state.bookmarks.some((b) => b.verseKey === bookmark.verseKey)
     
     if (exists) return state
 
@@ -53,20 +52,27 @@ export function addBookmark(bookmark: Omit<Bookmark, 'timestamp'>) {
   })
 }
 
-export function removeBookmark(surahNo: number, ayahNo: number) {
+export function removeBookmark(verseKey: string) {
   bookmarksStore.setState((state) => ({
-    bookmarks: state.bookmarks.filter(
-      (b) => !(b.surahNo === surahNo && b.ayahNo === ayahNo)
-    ),
+    bookmarks: state.bookmarks.filter((b) => b.verseKey !== verseKey),
   }))
 }
 
-export function isBookmarked(surahNo: number, ayahNo: number): boolean {
-  return bookmarksStore.state.bookmarks.some(
-    (b) => b.surahNo === surahNo && b.ayahNo === ayahNo
-  )
+export function toggleBookmark(bookmark: Omit<Bookmark, 'timestamp'>) {
+  const exists = bookmarksStore.state.bookmarks.some((b) => b.verseKey === bookmark.verseKey)
+  
+  if (exists) {
+    removeBookmark(bookmark.verseKey)
+  } else {
+    addBookmark(bookmark)
+  }
+}
+
+export function isBookmarked(verseKey: string): boolean {
+  return bookmarksStore.state.bookmarks.some((b) => b.verseKey === verseKey)
 }
 
 export function clearBookmarks() {
   bookmarksStore.setState({ bookmarks: [] })
 }
+
